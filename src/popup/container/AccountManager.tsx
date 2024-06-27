@@ -7,17 +7,19 @@ import { KeyPairWithAlias } from '../../@types/models';
 import { FieldState, FormState } from 'formstate';
 import { valueRequired } from '../../lib/FormValidator';
 import { confirm } from '../components/Confirmation';
+import AccountController from '../../background/AuthController';
 
 class AccountManager {
   constructor(
     private errors: ErrorContainer,
     private backgroundManager: BackgroundManager,
-    private appState: AppState
+    private appState: AppState,
+    private accountController: AccountController
   ) {}
 
   async createNewVault(password: string) {
     await this.errors.withCapture(
-      this.backgroundManager.createNewVault(password)
+      this.accountController.createNewVault(password)
     );
   }
 
@@ -87,7 +89,7 @@ class AccountManager {
 
   async downloadPemFiles(alias: string) {
     // Save the secret and public keys to disk.
-    this.backgroundManager.downloadAccountKeys(alias);
+    await this.accountController.downloadAccountKeys(alias);
   }
 
   async downloadActiveKey() {
@@ -113,13 +115,13 @@ class AccountManager {
   }
 
   async lock() {
-    return this.backgroundManager.lock();
+    return this.accountController.lock();
   }
 
   async unlock(password: string) {
     // when unlocking account show deprecation message
     await this.showcasperWalletAnnouncement();
-    return this.backgroundManager.unlock(password);
+    return this.accountController.unlock(password);
   }
 
   @computed
@@ -159,7 +161,7 @@ class AccountManager {
 
   @action
   async startLockoutTimer(timeInMinutes: number) {
-    return this.backgroundManager.startLockoutTimer(timeInMinutes);
+    return this.accountController.startLockoutTimer(timeInMinutes);
   }
 
   @computed
