@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../img/CasperLabs_Logo_Favicon_RGB_50px.png';
+import casperWalletBanner from '../img/Casper_Wallet_Banner.png';
 import {
   Button,
   createStyles,
@@ -153,11 +154,27 @@ class Home extends React.Component<
             </Typography>
             <Typography>
               Please use{' '}
-              <Link href="https://chromewebstore.google.com/detail/casper-wallet/abkahkcbhngaebpcgfmhkoioedceoigp">
+              <Link
+                target={'_blank'}
+                href="https://chromewebstore.google.com/detail/casper-wallet/abkahkcbhngaebpcgfmhkoioedceoigp"
+              >
                 Casper Wallet
               </Link>{' '}
               instead.
             </Typography>
+          </Grid>
+
+          <Grid item className={this.props.classes.alignCenter}>
+            <Link
+              target={'_blank'}
+              href="https://chromewebstore.google.com/detail/casper-wallet/abkahkcbhngaebpcgfmhkoioedceoigp"
+            >
+              <img
+                src={casperWalletBanner}
+                alt="Casper Wallet Banner"
+                width={268}
+              />
+            </Link>
           </Grid>
 
           {/*<Grid item container>*/}
@@ -279,14 +296,30 @@ class Home extends React.Component<
           </Typography>
           <Typography>
             Please use{' '}
-            <Link href="https://chromewebstore.google.com/detail/casper-wallet/abkahkcbhngaebpcgfmhkoioedceoigp">
+            <Link
+              target={'_blank'}
+              href="https://chromewebstore.google.com/detail/casper-wallet/abkahkcbhngaebpcgfmhkoioedceoigp"
+            >
               Casper Wallet
             </Link>{' '}
             instead.
           </Typography>
+
+          <Grid item className={this.props.classes.alignCenter}>
+            <Link
+              target={'_blank'}
+              href="https://chromewebstore.google.com/detail/casper-wallet/abkahkcbhngaebpcgfmhkoioedceoigp"
+            >
+              <img
+                src={casperWalletBanner}
+                alt="Casper Wallet Banner"
+                width={268}
+              />
+            </Link>
+          </Grid>
+
           {this.props.accountManager.userAccounts.length > 0 ? (
             <Grid item className={this.props.classes.alignCenter}>
-              <img src={logo} alt="logo" width={120} />
               {this.props.accountManager.userAccounts.length > 1 ? (
                 <Typography variant={'h6'} align={'center'}>
                   You have {this.props.accountManager.userAccounts.length}{' '}

@@ -1,3 +1,5 @@
+// @ts-ignore
+const a = '';
 // import AccountController from './AuthController';
 // import { browser } from 'webextension-polyfill-ts';
 // import { Rpc } from '../lib/rpc/rpc';

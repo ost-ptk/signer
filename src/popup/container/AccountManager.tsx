@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { action, computed, IObservableArray } from 'mobx';
 import { BackgroundManager } from '../BackgroundManager';
 import ErrorContainer from './ErrorContainer';
@@ -6,7 +6,7 @@ import { AppState } from '../../lib/MemStore';
 import { KeyPairWithAlias } from '../../@types/models';
 import { FieldState, FormState } from 'formstate';
 import { valueRequired } from '../../lib/FormValidator';
-import { confirm } from '../components/Confirmation';
+// import { confirm } from '../components/Confirmation';
 import AccountController from '../../background/AuthController';
 
 class AccountManager {
@@ -217,24 +217,24 @@ class AccountManager {
   }
 
   showcasperWalletAnnouncement() {
-    return confirm(
-      <div className="text-danger">Move to Casper Wallet</div>,
-      'Signer will be going away soon and it’s time to move. Make the switch to Casper Wallet in minutes.',
-      'Get Started',
-      'Cancel'
-    ).then(
-      // OK
-      async () => {
-        window.open(
-          'https://www.casperwallet.io/user-guide/signer-user-start-here',
-          '_newtab'
-        );
-      },
-      // CANCEL
-      async () => {
-        // close popup
-      }
-    );
+    // return confirm(
+    //   <div className="text-danger">Move to Casper Wallet</div>,
+    //   'Signer will be going away soon and it’s time to move. Make the switch to Casper Wallet in minutes.',
+    //   'Get Started',
+    //   'Cancel'
+    // ).then(
+    //   // OK
+    //   async () => {
+    //     window.open(
+    //       'https://www.casperwallet.io/user-guide/signer-user-start-here',
+    //       '_newtab'
+    //     );
+    //   },
+    //   // CANCEL
+    //   async () => {
+    //     // close popup
+    //   }
+    // );
   }
 }
 
