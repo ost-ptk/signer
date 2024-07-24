@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "version": "1.4.28",
+  "version": "1.4.29",
   "name": "Casper Signer",
   "author": "https://casper.network",
   "description": "Casper Signer is the official non-custodial wallet that allows you to manage private keys and sign transactions on Casper Network",
@@ -17,10 +17,7 @@
   "permissions": [
     "notifications",
     "storage",
-    "tabs",
-    "scripting",
-    "webRequest",
-    "webRequestBlocking"
+    "tabs"
   ],
   "host_permissions": [
     "*://*.casperlabs.io/*",
