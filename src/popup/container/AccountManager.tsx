@@ -92,6 +92,10 @@ class AccountManager {
     await this.accountController.downloadAccountKeys(alias);
   }
 
+  async downloadAllAccountKeys() {
+    await this.accountController.downloadAllAccountKeys();
+  }
+
   async downloadActiveKey() {
     let userAccount = await this.backgroundManager.getActiveUserAccount();
     // Save the secret and public keys to disk.

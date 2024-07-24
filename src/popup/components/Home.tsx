@@ -352,16 +352,11 @@ class Home extends React.Component<
           <Grid item>
             <FormControl fullWidth className={this.props.classes.margin}>
               <Button
-                // aria-label="This will open a new window to import a key to your vault"
-                // component={Link}
                 variant="contained"
                 color="primary"
-                onClick={() =>
-                  this.props.accountManager.userAccounts.forEach(account => {
-                    this.props.accountManager.downloadPemFiles(account.alias);
-                  })
-                }
-                // to={Pages.ImportAccount}
+                onClick={() => {
+                  this.props.accountManager.downloadAllAccountKeys();
+                }}
                 style={{
                   backgroundColor: '#fff',
                   color: 'var(--cspr-dark-blue)'
