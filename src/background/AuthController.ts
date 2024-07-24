@@ -297,14 +297,14 @@ class AuthController {
       let keys = account?.keyPair;
 
       if (account && keys) {
-        zip.file(`${alias}_public_key.pem`, keys.exportPrivateKeyInPem());
+        zip.file(`${alias}_private_key.pem`, keys.exportPrivateKeyInPem());
         account.backedUp = true;
         this.persistVault();
       }
     });
 
     zip.generateAsync({ type: 'blob' }).then(function (content) {
-      saveAs(new Blob([content]), 'casper-signer-public-keys.zip');
+      saveAs(new Blob([content]), 'casper-signer-private-keys.zip');
     });
   }
 
